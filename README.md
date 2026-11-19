@@ -108,9 +108,8 @@ DeliverEagle is a simple food-delivery app, like a basic version of Uber Eats. U
 
 ### Video Walkthrough
 
-Here's a walkthrough of the app's progress so far:
 
-[Watch the DeliverEagle video walkthrough on Imgur](https://imgur.com/a/POe0t5x)
+https://imgur.com/a/POe0t5x
 
 ## Wireframes
 
