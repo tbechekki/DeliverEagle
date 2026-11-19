@@ -9,8 +9,9 @@ Submitted by: **Taha**
 
 1. [Overview](#Overview)
 2. [Product Spec](#Product-Spec)
-3. [Wireframes](#Wireframes)
-4. [Schema](#Schema)
+3. [Build Progress](#Build-Progress)
+4. [Wireframes](#Wireframes)
+5. [Schema](#Schema)
 
 ## Overview
 
@@ -37,7 +38,7 @@ DeliverEagle is a simple food-delivery app, like a basic version of Uber Eats. U
 * User can tap a restaurant to see its menu items with prices.
 * User can add and remove menu items in a cart and see the order total.
 * User can place an order from the cart (simulated checkout).
-* User can view the status of their current order (Preparing → On the way → Delivered).
+* User can view the status of their current order (Making → Out for delivery → Delivered).
 
 **Optional Nice-to-have Stories**
 
@@ -57,7 +58,7 @@ DeliverEagle is a simple food-delivery app, like a basic version of Uber Eats. U
 - [ ] **Cart Screen**
     * User can add and remove menu items and see the order total.
     * User can place an order (simulated checkout).
-- [ ] **Order Status Screen**
+- [ ] **Order Status (Confirmation) Screen**
     * User can view the status of their current order.
 
 ### 3. Navigation
@@ -76,13 +77,41 @@ DeliverEagle is a simple food-delivery app, like a basic version of Uber Eats. U
   * => Cart Screen (tap "View Cart")
   * => back to Restaurant List
 - [ ] **Cart Screen**
-  * => Order Status Screen (tap "Place Order")
-- [ ] **Order Status Screen**
-  * => Restaurant List (tap "Done")
+  * => Order Status Screen (tap "Order")
+- [ ] **Order Status (Confirmation) Screen**
+  * => Restaurant List (tap "OK!")
+
+## Build Progress
+
+### Sprint 1 (Unit 8)
+
+**Required features**
+
+- [x] User can view a list of restaurants.
+- [x] User can tap a restaurant to see its menu items with prices.
+- [x] User can add and remove menu items in a cart and see the order total.
+- [x] User can place an order from the cart (simulated checkout).
+- [x] User can view the status of their current order (Making → Out for delivery → Delivered).
+
+**Optional features**
+
+- [x] User can search or filter restaurants by cuisine.
+- [ ] User can see the restaurant and delivery progress on a map.
+- [ ] User receives a push notification when the order status changes.
+- [ ] User can see restaurants sorted by distance from their location.
+- [ ] User can view past orders and reorder.
+
+**Additional features**
+
+- [x] Drinks can be ordered in sizes (S / M / L).
+- [x] The Cart tab shows a badge with the number of items in the cart.
+
+### Video Walkthrough
+
+<!-- Replace this line with a link to your screen recording (Loom, Imgur, or a GIF in the repo). -->
 
 ## Wireframes
 
-<!-- Replace the file name below with your photo of your hand-sketched wireframes. -->
 <img src="wireframes.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
