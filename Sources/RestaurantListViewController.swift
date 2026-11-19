@@ -10,7 +10,8 @@ import UIKit
 
 final class RestaurantListViewController: UITableViewController {
 
-    private let allRestaurants = MockData.restaurants
+    private var allRestaurants = MockData.restaurants
+    private let mealService: MealServiceProtocol = MealService()
     private var restaurants = MockData.restaurants
     private let searchController = UISearchController(searchResultsController: nil)
 
@@ -24,6 +25,41 @@ final class RestaurantListViewController: UITableViewController {
         searchController.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search restaurants or cuisines"
+
+        let historyButton = UIBarButtonItem(image: UIImage(systemName: "clock.arrow.circlepath"), style: .plain, target: self, action: #selector(showPastOrders))
+        navigationItem.rightBarButtonItems = (navigationItem.rightBarButtonItems ?? []) + [historyButton]
+
+        loadSpecials()
+    }
+
+    // MARK: - API and saved orders
+
+    /// Fetches seafood dishes from TheMealDB and adds them as a "Chef's Specials" restaurant.
+    private func loadSpecials() {
+        mealService.fetchMeals(category: "Seafood") { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let meals):
+                guard !meals.isEmpty else { return }
+                let menu = meals.prefix(8).map { MenuItem(name: $0.strMeal, price: 12.99) }
+                let specials = Restaurant(
+                    name: "Chef's Specials",
+                    cuisine: "Seafood",
+                    distanceMiles: 1.0,
+                    deliveryMinutes: 35,
+                    iconName: "fish",
+                    menu: menu
+                )
+                self.allRestaurants.append(specials)
+                self.updateSearchResults(for: self.searchController)
+            case .failure(let error):
+                print("Couldn't load Chef's Specials: \(error)")
+            }
+        }
+    }
+
+    @objc private func showPastOrders() {
+        navigationController?.pushViewController(PastOrdersViewController(style: .insetGrouped), animated: true)
     }
 
     // MARK: - Search and navigation
