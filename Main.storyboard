@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tab-vc-001">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="tab-sc-001">
+            <objects>
+                <tabBarController id="tab-vc-001" customClass="MainTabBarController" customModule="DeliverEagle" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tab-tb-001">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="hnv-nc-001" kind="relationship" relationship="viewControllers" id="tab-sg-001"/>
+                        <segue destination="cnv-nc-001" kind="relationship" relationship="viewControllers" id="tab-sg-002"/>
+                        <segue destination="onv-nc-001" kind="relationship" relationship="viewControllers" id="tab-sg-003"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tab-fr-001" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1300" y="900"/>
+        </scene>
+        <!--Home Navigation Controller-->
+        <scene sceneID="hnv-sc-001">
+            <objects>
+                <navigationController id="hnv-nc-001" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="hnv-ti-001"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hnv-nb-001">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hom-vc-001" kind="relationship" relationship="rootViewController" id="hnv-sg-001"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hnv-fr-001" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-600" y="0.0"/>
+        </scene>
+        <!--Home: Restaurant List-->
+        <scene sceneID="hom-sc-001">
+            <objects>
+                <tableViewController id="hom-vc-001" customClass="RestaurantListViewController" customModule="DeliverEagle" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="88" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="hom-tv-001">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RestaurantCell" rowHeight="88" id="hom-cl-001" customClass="RestaurantCell" customModule="DeliverEagle" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hom-cl-001" id="hom-cv-001">
+                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="88"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hom-bx-001" userLabel="Thumbnail Box">
+                                            <rect key="frame" x="20" y="12" width="64" height="64"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="takeoutbag.and.cup.and.straw" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hom-ic-001" userLabel="Restaurant Icon">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="64" id="hom-cn-003"/>
+                                                <constraint firstAttribute="height" constant="64" id="hom-cn-004"/>
+                                                <constraint firstItem="hom-ic-001" firstAttribute="leading" secondItem="hom-bx-001" secondAttribute="leading" id="hom-cn-005"/>
+                                                <constraint firstItem="hom-ic-001" firstAttribute="top" secondItem="hom-bx-001" secondAttribute="top" id="hom-cn-006"/>
+                                                <constraint firstAttribute="trailing" secondItem="hom-ic-001" secondAttribute="trailing" id="hom-cn-001"/>
+                                                <constraint firstAttribute="bottom" secondItem="hom-ic-001" secondAttribute="bottom" id="hom-cn-002"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hom-st-001" userLabel="Name and Details">
+                                            <rect key="frame" x="98" y="24.666666666666671" width="244.66666666666666" height="38.666666666666657"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="McDonald's" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hom-nm-001" userLabel="Name Label">
+                                                    <rect key="frame" x="0.0" y="0.0" width="244.66666666666666" height="20.333333333333332"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.8 mi · 30 min" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hom-dt-001" userLabel="Distance and Time Label">
+                                                    <rect key="frame" x="0.0" y="24.333333333333332" width="244.66666666666666" height="14.333333333333334"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hom-bx-001" firstAttribute="leading" secondItem="hom-cv-001" secondAttribute="leadingMargin" id="hom-cn-007"/>
+                                        <constraint firstItem="hom-bx-001" firstAttribute="centerY" secondItem="hom-cv-001" secondAttribute="centerY" id="hom-cn-008"/>
+                                        <constraint firstItem="hom-bx-001" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hom-cv-001" secondAttribute="top" constant="12" id="hom-cn-009"/>
+                                        <constraint firstItem="hom-cv-001" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hom-bx-001" secondAttribute="bottom" constant="12" id="hom-cn-010"/>
+                                        <constraint firstItem="hom-st-001" firstAttribute="leading" secondItem="hom-bx-001" secondAttribute="trailing" constant="14" id="hom-cn-011"/>
+                                        <constraint firstItem="hom-cv-001" firstAttribute="trailingMargin" secondItem="hom-st-001" secondAttribute="trailing" id="hom-cn-012"/>
+                                        <constraint firstItem="hom-st-001" firstAttribute="centerY" secondItem="hom-cv-001" secondAttribute="centerY" id="hom-cn-013"/>
+                                        <constraint firstItem="hom-st-001" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hom-cv-001" secondAttribute="top" constant="12" id="hom-cn-014"/>
+                                        <constraint firstItem="hom-cv-001" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hom-st-001" secondAttribute="bottom" constant="12" id="hom-cn-015"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailLabel" destination="hom-dt-001" id="hom-ot-001"/>
+                                    <outlet property="iconView" destination="hom-ic-001" id="hom-ot-002"/>
+                                    <outlet property="nameLabel" destination="hom-nm-001" id="hom-ot-003"/>
+                                    <outlet property="thumbnailBox" destination="hom-bx-001" id="hom-ot-004"/>
+                                    <segue destination="mnu-vc-001" kind="show" destinationCreationSelector="makeMenuViewController:sender:" id="hom-sg-001"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hom-vc-001" id="hom-ot-005"/>
+                            <outlet property="delegate" destination="hom-vc-001" id="hom-ot-006"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hom-ni-001">
+                        <barButtonItem key="leftBarButtonItem" id="hom-lb-001">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="hom-lc-001" userLabel="Location Button" userInteractionEnabled="NO">
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="34"/>
+                                <accessibility key="accessibilityConfiguration" label="Location: Charlotte, NC">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="location.circle" catalog="system" title="Charlotte, NC" imagePadding="6"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="hom-rb-001">
+                            <connections>
+                                <action selector="searchTapped" destination="hom-vc-001" id="hom-ac-001"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hom-fr-001" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200" y="0.0"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="mnu-sc-001">
+            <objects>
+                <tableViewController storyboardIdentifier="MenuViewController" id="mnu-vc-001" customClass="MenuViewController" customModule="DeliverEagle" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="60" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="mnu-tv-001">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="mnu-hd-001" userLabel="Restaurant Image Banner">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="180"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="takeoutbag.and.cup.and.straw" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mnu-im-001" userLabel="Restaurant Image">
+                                    <rect key="frame" x="151.66666666666666" y="24" width="90" height="90"/>
+                                    <color key="tintColor" systemColor="systemOrangeColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="90" id="mnu-cn-001"/>
+                                        <constraint firstAttribute="height" constant="90" id="mnu-cn-002"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burgers · 0.8 mi · 30 min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnu-if-001" userLabel="Restaurant Info Label">
+                                    <rect key="frame" x="117" y="146" width="159" height="18"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="mnu-im-001" firstAttribute="centerX" secondItem="mnu-hd-001" secondAttribute="centerX" id="mnu-cn-003"/>
+                                <constraint firstItem="mnu-im-001" firstAttribute="top" secondItem="mnu-hd-001" secondAttribute="top" constant="24" id="mnu-cn-004"/>
+                                <constraint firstItem="mnu-if-001" firstAttribute="centerX" secondItem="mnu-hd-001" secondAttribute="centerX" id="mnu-cn-005"/>
+                                <constraint firstAttribute="bottom" secondItem="mnu-if-001" secondAttribute="bottom" constant="16" id="mnu-cn-006"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItemCell" rowHeight="108" id="mnu-cl-001" customClass="MenuItemCell" customModule="DeliverEagle" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="230" width="393" height="108"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mnu-cl-001" id="mnu-cv-001">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="108"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="leading" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mnu-cs-001" userLabel="Item Column">
+                                            <rect key="frame" x="20" y="12" width="353" height="84"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mnu-tr-001" userLabel="Name, Price, Add">
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="44"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soft Drink" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnu-nm-001" userLabel="Name Label">
+                                                            <rect key="frame" x="0.0" y="11.666666666666666" width="244" height="20.666666666666668"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" systemColor="labelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="$3.29" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnu-pr-001" userLabel="Price Label">
+                                                            <rect key="frame" x="254" y="11.666666666666666" width="45" height="20.666666666666668"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" systemColor="labelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnu-ad-001" userLabel="Add Button">
+                                                            <rect key="frame" x="309" y="0.0" width="44" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="mnu-cn-007"/>
+                                                                <constraint firstAttribute="height" constant="44" id="mnu-cn-008"/>
+                                                            </constraints>
+                                                            <state key="normal" image="plus.square" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="addTapped" destination="mnu-cl-001" eventType="touchUpInside" id="mnu-ac-001"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mnu-sz-001" userLabel="Size Picker">
+                                                    <rect key="frame" x="0.0" y="52" width="140" height="32"/>
+                                                    <segments>
+                                                        <segment title="S"/>
+                                                        <segment title="M"/>
+                                                        <segment title="L"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="sizeChanged" destination="mnu-cl-001" eventType="valueChanged" id="mnu-ac-002"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mnu-tr-001" firstAttribute="width" secondItem="mnu-cs-001" secondAttribute="width" id="mnu-cn-009"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mnu-cs-001" firstAttribute="leading" secondItem="mnu-cv-001" secondAttribute="leadingMargin" id="mnu-cn-010"/>
+                                        <constraint firstItem="mnu-cv-001" firstAttribute="trailingMargin" secondItem="mnu-cs-001" secondAttribute="trailing" id="mnu-cn-011"/>
+                                        <constraint firstItem="mnu-cs-001" firstAttribute="top" secondItem="mnu-cv-001" secondAttribute="top" constant="12" id="mnu-cn-012"/>
+                                        <constraint firstAttribute="bottom" secondItem="mnu-cs-001" secondAttribute="bottom" constant="12" id="mnu-cn-013"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addButton" destination="mnu-ad-001" id="mnu-ot-001"/>
+                                    <outlet property="nameLabel" destination="mnu-nm-001" id="mnu-ot-002"/>
+                                    <outlet property="priceLabel" destination="mnu-pr-001" id="mnu-ot-003"/>
+                                    <outlet property="sizeControl" destination="mnu-sz-001" id="mnu-ot-004"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mnu-vc-001" id="mnu-ot-005"/>
+                            <outlet property="delegate" destination="mnu-vc-001" id="mnu-ot-006"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="McDonald's" largeTitleDisplayMode="never" id="mnu-ni-001">
+                        <barButtonItem key="rightBarButtonItem" title="View Cart" id="mnu-cb-001">
+                            <connections>
+                                <segue destination="crt-vc-001" kind="show" id="mnu-sg-001"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bannerImageView" destination="mnu-im-001" id="mnu-ot-007"/>
+                        <outlet property="bannerInfoLabel" destination="mnu-if-001" id="mnu-ot-008"/>
+                        <outlet property="cartButton" destination="mnu-cb-001" id="mnu-ot-009"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mnu-fr-001" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="0.0"/>
+        </scene>
+        <!--Cart Navigation Controller-->
+        <scene sceneID="cnv-sc-001">
+            <objects>
+                <navigationController id="cnv-nc-001" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="Cart" image="cart" catalog="system" id="cnv-ti-001"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cnv-nb-001">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="crt-vc-001" kind="relationship" relationship="rootViewController" id="cnv-sg-001"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnv-fr-001" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="1000"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="crt-sc-001">
+            <objects>
+                <tableViewController storyboardIdentifier="CartViewController" id="crt-vc-001" customClass="CartViewController" customModule="DeliverEagle" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="80" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="crt-tv-001">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="crt-ft-001" userLabel="Order Button Footer">
+                            <rect key="frame" x="0.0" y="300" width="393" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crt-ob-001" userLabel="Order Button">
+                                    <rect key="frame" x="78.666666666666671" y="15" width="235.66666666666663" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="crt-cn-001"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Order" cornerStyle="large">
+                                        <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="placeOrderTapped" destination="crt-vc-001" eventType="touchUpInside" id="crt-ac-001"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="crt-ob-001" firstAttribute="centerX" secondItem="crt-ft-001" secondAttribute="centerX" id="crt-cn-002"/>
+                                <constraint firstItem="crt-ob-001" firstAttribute="centerY" secondItem="crt-ft-001" secondAttribute="centerY" id="crt-cn-003"/>
+                                <constraint firstItem="crt-ob-001" firstAttribute="width" secondItem="crt-ft-001" secondAttribute="width" multiplier="0.6" id="crt-cn-004"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CartItemCell" rowHeight="84" id="crt-cl-001" customClass="CartItemCell" customModule="DeliverEagle" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="84"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="crt-cl-001" id="crt-cv-001">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="84"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="trailing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="crt-cs-001" userLabel="Item Column">
+                                            <rect key="frame" x="20" y="12" width="353" height="64"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="crt-tr-001" userLabel="Name and Price">
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="28"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheeseburger" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crt-nm-001" userLabel="Name Label">
+                                                            <rect key="frame" x="0.0" y="0.0" width="298" height="20.666666666666668"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" systemColor="labelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="$5.98" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crt-pr-001" userLabel="Price Label">
+                                                            <rect key="frame" x="308" y="0.0" width="45" height="20.666666666666668"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" systemColor="labelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="crt-qr-001" userLabel="Quantity Control">
+                                                    <rect key="frame" x="237" y="32" width="116" height="32"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crt-mn-001" userLabel="Minus Button">
+                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="32"/>
+                                                            <accessibility key="accessibilityConfiguration" label="Remove one"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="crt-cn-005"/>
+                                                                <constraint firstAttribute="height" constant="32" id="crt-cn-006"/>
+                                                            </constraints>
+                                                            <state key="normal" image="minus" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="minusTapped" destination="crt-cl-001" eventType="touchUpInside" id="crt-ac-002"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crt-qt-001" userLabel="Quantity Label">
+                                                            <rect key="frame" x="44" y="6" width="28" height="20.333333333333332"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="28" id="crt-cn-007"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" systemColor="labelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crt-pl-001" userLabel="Plus Button">
+                                                            <rect key="frame" x="72" y="0.0" width="44" height="32"/>
+                                                            <accessibility key="accessibilityConfiguration" label="Add one"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="crt-cn-008"/>
+                                                                <constraint firstAttribute="height" constant="32" id="crt-cn-009"/>
+                                                            </constraints>
+                                                            <state key="normal" image="plus" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="plusTapped" destination="crt-cl-001" eventType="touchUpInside" id="crt-ac-003"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="crt-tr-001" firstAttribute="width" secondItem="crt-cs-001" secondAttribute="width" id="crt-cn-010"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="crt-cs-001" firstAttribute="leading" secondItem="crt-cv-001" secondAttribute="leadingMargin" id="crt-cn-011"/>
+                                        <constraint firstItem="crt-cv-001" firstAttribute="trailingMargin" secondItem="crt-cs-001" secondAttribute="trailing" id="crt-cn-012"/>
+                                        <constraint firstItem="crt-cs-001" firstAttribute="top" secondItem="crt-cv-001" secondAttribute="top" constant="12" id="crt-cn-013"/>
+                                        <constraint firstAttribute="bottom" secondItem="crt-cs-001" secondAttribute="bottom" constant="8" id="crt-cn-014"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="crt-nm-001" id="crt-ot-001"/>
+                                    <outlet property="priceLabel" destination="crt-pr-001" id="crt-ot-002"/>
+                                    <outlet property="quantityLabel" destination="crt-qt-001" id="crt-ot-003"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TotalCell" rowHeight="52" id="crt-cl-002" customClass="TotalCell" customModule="DeliverEagle" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="134" width="393" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="crt-cl-002" id="crt-cv-002">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="52"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="crt-ts-001" userLabel="Total Row">
+                                            <rect key="frame" x="20" y="14" width="353" height="24"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: $6.28 + $3.00 delivery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crt-bd-001" userLabel="Breakdown Label">
+                                                    <rect key="frame" x="0.0" y="0.0" width="296" height="20.666666666666668"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="$9.28" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crt-am-001" userLabel="Total Amount Label">
+                                                    <rect key="frame" x="306" y="0.0" width="47" height="20.333333333333332"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="crt-ts-001" firstAttribute="leading" secondItem="crt-cv-002" secondAttribute="leadingMargin" id="crt-cn-015"/>
+                                        <constraint firstItem="crt-cv-002" firstAttribute="trailingMargin" secondItem="crt-ts-001" secondAttribute="trailing" id="crt-cn-016"/>
+                                        <constraint firstItem="crt-ts-001" firstAttribute="top" secondItem="crt-cv-002" secondAttribute="top" constant="14" id="crt-cn-017"/>
+                                        <constraint firstAttribute="bottom" secondItem="crt-ts-001" secondAttribute="bottom" constant="14" id="crt-cn-018"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="amountLabel" destination="crt-am-001" id="crt-ot-004"/>
+                                    <outlet property="breakdownLabel" destination="crt-bd-001" id="crt-ot-005"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="crt-vc-001" id="crt-ot-006"/>
+                            <outlet property="delegate" destination="crt-vc-001" id="crt-ot-007"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Cart" largeTitleDisplayMode="never" id="crt-ni-001"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crt-fr-001" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800" y="0.0"/>
+        </scene>
+        <!--Orders Navigation Controller-->
+        <scene sceneID="onv-sc-001">
+            <objects>
+                <navigationController id="onv-nc-001" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="2" title="Orders" image="bag" catalog="system" id="onv-ti-001"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="onv-nb-001">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ord-vc-001" kind="relationship" relationship="rootViewController" id="onv-sg-001"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="onv-fr-001" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800" y="1000"/>
+        </scene>
+        <!--Order (Confirmation)-->
+        <scene sceneID="ord-sc-001">
+            <objects>
+                <viewController id="ord-vc-001" customClass="OrderStatusViewController" customModule="DeliverEagle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ord-vw-001">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ord-st-001" userLabel="Content">
+                                <rect key="frame" x="24" y="127" width="345" height="400"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Placed!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ord-hd-001" userLabel="Heading Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="34"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order #1234 · McDonald's · $9.28" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ord-dt-001" userLabel="Order Details Label">
+                                        <rect key="frame" x="0.0" y="50" width="345" height="18"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="leading" translatesAutoresizingMaskIntoConstraints="NO" id="ord-tl-001" userLabel="Status Timeline">
+                                        <rect key="frame" x="0.0" y="84" width="345" height="154"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="14" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ord-r0-001" userLabel="Making Step">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="22"/>
+                                                <subviews>
+                                                    <view tag="0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ord-d0-001" userLabel="Making Dot">
+                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="22" id="ord-cn-001"/>
+                                                            <constraint firstAttribute="height" constant="22" id="ord-cn-002"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label tag="0" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Making" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ord-l0-001" userLabel="Making Label">
+                                                        <rect key="frame" x="36" y="1" width="64" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ord-c1-001" userLabel="Line Container 1">
+                                                <rect key="frame" x="0.0" y="22" width="22" height="44"/>
+                                                <subviews>
+                                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ord-ln1-01" userLabel="Line 1">
+                                                        <rect key="frame" x="10" y="0.0" width="2" height="44"/>
+                                                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="2" id="ord-cn-003"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="22" id="ord-cn-004"/>
+                                                    <constraint firstAttribute="height" constant="44" id="ord-cn-005"/>
+                                                    <constraint firstItem="ord-ln1-01" firstAttribute="centerX" secondItem="ord-c1-001" secondAttribute="centerX" id="ord-cn-006"/>
+                                                    <constraint firstItem="ord-ln1-01" firstAttribute="top" secondItem="ord-c1-001" secondAttribute="top" id="ord-cn-007"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ord-ln1-01" secondAttribute="bottom" id="ord-cn-008"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="14" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ord-r1-001" userLabel="Out for Delivery Step">
+                                                <rect key="frame" x="0.0" y="66" width="160" height="22"/>
+                                                <subviews>
+                                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ord-d1-001" userLabel="Out for Delivery Dot">
+                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="22" id="ord-cn-009"/>
+                                                            <constraint firstAttribute="height" constant="22" id="ord-cn-010"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label tag="1" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out for delivery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ord-l1-001" userLabel="Out for Delivery Label">
+                                                        <rect key="frame" x="36" y="1" width="124" height="20.666666666666668"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ord-c2-001" userLabel="Line Container 2">
+                                                <rect key="frame" x="0.0" y="88" width="22" height="44"/>
+                                                <subviews>
+                                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ord-ln2-01" userLabel="Line 2">
+                                                        <rect key="frame" x="10" y="0.0" width="2" height="44"/>
+                                                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="2" id="ord-cn-011"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="22" id="ord-cn-012"/>
+                                                    <constraint firstAttribute="height" constant="44" id="ord-cn-013"/>
+                                                    <constraint firstItem="ord-ln2-01" firstAttribute="centerX" secondItem="ord-c2-001" secondAttribute="centerX" id="ord-cn-014"/>
+                                                    <constraint firstItem="ord-ln2-01" firstAttribute="top" secondItem="ord-c2-001" secondAttribute="top" id="ord-cn-015"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ord-ln2-01" secondAttribute="bottom" id="ord-cn-016"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="14" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ord-r2-001" userLabel="Delivered Step">
+                                                <rect key="frame" x="0.0" y="132" width="110" height="22"/>
+                                                <subviews>
+                                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ord-d2-001" userLabel="Delivered Dot">
+                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="22" id="ord-cn-017"/>
+                                                            <constraint firstAttribute="height" constant="22" id="ord-cn-018"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label tag="2" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivered" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ord-l2-001" userLabel="Delivered Label">
+                                                        <rect key="frame" x="36" y="1" width="74" height="20.666666666666668"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ord-or-001" userLabel="OK Button Row">
+                                        <rect key="frame" x="0.0" y="254" width="345" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ord-ok-001" userLabel="OK Button">
+                                                <rect key="frame" x="86.333333333333329" y="0.0" width="172.66666666666669" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ord-cn-019"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="OK!" cornerStyle="large">
+                                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="okTapped" destination="ord-vc-001" eventType="touchUpInside" id="ord-ac-001"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ord-ok-001" firstAttribute="centerX" secondItem="ord-or-001" secondAttribute="centerX" id="ord-cn-020"/>
+                                            <constraint firstItem="ord-ok-001" firstAttribute="width" secondItem="ord-or-001" secondAttribute="width" multiplier="0.5" id="ord-cn-021"/>
+                                            <constraint firstItem="ord-ok-001" firstAttribute="top" secondItem="ord-or-001" secondAttribute="top" id="ord-cn-022"/>
+                                            <constraint firstAttribute="bottom" secondItem="ord-ok-001" secondAttribute="bottom" id="ord-cn-023"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ord-sa-001"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ord-st-001" firstAttribute="top" secondItem="ord-sa-001" secondAttribute="top" constant="24" id="ord-cn-024"/>
+                            <constraint firstItem="ord-st-001" firstAttribute="leading" secondItem="ord-sa-001" secondAttribute="leading" constant="24" id="ord-cn-025"/>
+                            <constraint firstItem="ord-sa-001" firstAttribute="trailing" secondItem="ord-st-001" secondAttribute="trailing" constant="24" id="ord-cn-026"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Order" id="ord-ni-001"/>
+                    <connections>
+                        <outlet property="detailLabel" destination="ord-dt-001" id="ord-ot-001"/>
+                        <outlet property="headingLabel" destination="ord-hd-001" id="ord-ot-002"/>
+                        <outlet property="okButtonRow" destination="ord-or-001" id="ord-ot-003"/>
+                        <outlet property="stackView" destination="ord-st-001" id="ord-ot-004"/>
+                        <outlet property="timelineView" destination="ord-tl-001" id="ord-ot-005"/>
+                        <outletCollection property="dotViews" destination="ord-d0-001" collectionClass="NSMutableArray" id="ord-oc-001"/>
+                        <outletCollection property="dotViews" destination="ord-d1-001" collectionClass="NSMutableArray" id="ord-oc-002"/>
+                        <outletCollection property="dotViews" destination="ord-d2-001" collectionClass="NSMutableArray" id="ord-oc-003"/>
+                        <outletCollection property="stepLabels" destination="ord-l0-001" collectionClass="NSMutableArray" id="ord-oc-004"/>
+                        <outletCollection property="stepLabels" destination="ord-l1-001" collectionClass="NSMutableArray" id="ord-oc-005"/>
+                        <outletCollection property="stepLabels" destination="ord-l2-001" collectionClass="NSMutableArray" id="ord-oc-006"/>
+                        <outletCollection property="lineViews" destination="ord-ln1-01" collectionClass="NSMutableArray" id="ord-oc-007"/>
+                        <outletCollection property="lineViews" destination="ord-ln2-01" collectionClass="NSMutableArray" id="ord-oc-008"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ord-fr-001" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2600" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bag" catalog="system" width="128" height="128"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="location.circle" catalog="system" width="128" height="123"/>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus.square" catalog="system" width="128" height="114"/>
+        <image name="takeoutbag.and.cup.and.straw" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
