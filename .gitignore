@@ -1,0 +1,10 @@
+# Xcode per-user files (don't commit these)
+xcuserdata/
+*.xcuserstate
+
+# Build output
+DerivedData/
+build/
+
+# macOS
+.DS_Store
