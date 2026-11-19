@@ -98,6 +98,7 @@ final class CartStore: NSObject {
             status: .preparing
         )
         currentOrder = order
+        OrderHistory.save(order)
         clearCart()
         notifyOrderChanged()
         startStatusUpdates()
